@@ -52,14 +52,17 @@ export class ZDPopup extends Popup {
     this.container = DomUtil.create("div", "zd-popup");
 
     const title = DomUtil.create("h3", "zd-popup__title", this.container);
-    if (options.link) {
-      const link = DomUtil.create("a", "", title);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("href", `/wiki/${encodeURIComponent(options.link)}`);
-      link.innerText = options.name;
-    } else {
-      title.innerText = options.name;
-    }
+    // MODIFIED FOR OFFLINE-ONLY
+    // remove title link
+    // in offline mode title link is useless
+    // if (options.link) {
+    //   const link = DomUtil.create("a", "", title);
+    //   link.setAttribute("target", "_blank");
+    //   link.setAttribute("href", `/wiki/${encodeURIComponent(options.link)}`);
+    //   link.innerText = options.name;
+    // } else {
+    title.innerText = options.name;
+    // }
 
     this.body = DomUtil.create("div", "zd-popup__body", this.container);
 
