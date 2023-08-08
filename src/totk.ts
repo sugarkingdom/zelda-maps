@@ -590,49 +590,37 @@ window.onload = async () => {
       .catch((ex) => console.log(ex));
   }
 
-  function addWikiJson(mapLayer: MapLayer, wikiSubpage: string): Promise<void> {
-    return (
-      map.wiki
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .query<any>(
-          `action=query&prop=revisions&titles=${encodeURIComponent(
-            `Zelda Dungeon:Tears of the Kingdom Map/${wikiSubpage}`
-          )}&rvslots=main&rvprop=content&formatversion=2`
-        )
-        .then((result) => {
-          const content = <string>(
-            result.query.pages[0].revisions[0].slots.main.content
-          );
-          const categories: Schema.Category[] = JSON.parse(content);
-          for (const category of categories) {
-            mapLayer.addCategory(
-              category.name,
-              category.layers.map((l) =>
-                Layer.fromJSON(
-                  l,
-                  category.name,
-                  category.link,
-                  category.source,
-                  "totk",
-                  map.wiki
-                )
+  function addWikiJson(mapLayer: MapLayer, path: string): Promise<void> {
+    return fetch(`${import.meta.env.BASE_URL}totk/markers/${path}?v=${jsonVer}`)
+      .then((r) => r.json())
+      .then((result) => {
+        const content = <string>(
+          result.query.pages[0].revisions[0].slots.main.content
+        );
+        const categories: Schema.Category[] = JSON.parse(content);
+        for (const category of categories) {
+          mapLayer.addCategory(
+            category.name,
+            category.layers.map((l) =>
+              Layer.fromJSON(
+                l,
+                category.name,
+                category.link,
+                category.source,
+                "totk",
+                map.wiki
               )
-            );
-          }
-        })
-        .catch((ex) => {
-          map.showNotification(
-            `User-contributed markers from ${wikiSubpage} were unable to load due to a formatting error.`
+            )
           );
-          console.log(`Error parsing JSON from page: ${wikiSubpage}\n${ex}`);
-        })
-    );
+        }
+      })
+      .catch((ex) => console.log(ex));
   }
 
   function addWiki(
     mapLayer: MapLayer,
     categoryName: string,
-    wikiSubpage: string,
+    path: string,
     infoSource: string,
     iconUrl: string,
     iconWidth: number,
@@ -640,57 +628,46 @@ window.onload = async () => {
     minZoom: number
   ): Promise<void> {
     const ctrs: { [key: string]: number } = {};
-    return (
-      map.wiki
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .query<any>(
-          `action=parse&page=${encodeURIComponent(
-            `Zelda Dungeon:Tears of the Kingdom Map/${wikiSubpage}`
-          )}`
-        )
-        .then((result) => {
-          let markers = <string>result.parse.text["*"];
-          const wikiRegex = /<p>([\s\S]*),\n?<\/p>/g;
-          const res = wikiRegex.exec(markers);
-          markers = res ? res[1] : "";
-          const layer: Schema.Layer = JSON.parse(`{
-  "minZoom": ${minZoom},
-  "icon": {
-      "url": "${iconUrl}.png",
-      "width": ${iconWidth},
-      "height": ${iconHeight}
-  },
-  "markers": [
-    ${markers}
-  ]
-}`);
-          layer.markers.forEach((m) => {
-            m.tags = ["User-Contributed"];
-            if (ctrs[m.id] == undefined) {
-              ctrs[m.id] = 1;
-            } else {
-              m.id = `${m.id}_${ctrs[m.id]++}`;
-            }
-          });
 
-          mapLayer.addCategory(categoryName, [
-            Layer.fromJSON(
-              layer,
-              categoryName,
-              undefined,
-              infoSource,
-              "totk",
-              map.wiki
-            ),
-          ]);
-        })
-        .catch((ex) => {
-          map.showNotification(
-            `User-contributed markers from ${wikiSubpage} were unable to load due to a formatting error.`
-          );
-          console.log(`Error parsing JSON from page: ${wikiSubpage}\n${ex}`);
-        })
-    );
+    return fetch(`${import.meta.env.BASE_URL}totk/markers/${path}?v=${jsonVer}`)
+      .then((r) => r.json())
+      .then((result) => {
+        let markers = <string>result.parse.text["*"];
+        const wikiRegex = /<p>([\s\S]*),\n?<\/p>/g;
+        const res = wikiRegex.exec(markers);
+        markers = res ? res[1] : "";
+        const layer: Schema.Layer = JSON.parse(`{
+"minZoom": ${minZoom},
+"icon": {
+    "url": "${iconUrl}.png",
+    "width": ${iconWidth},
+    "height": ${iconHeight}
+},
+"markers": [
+  ${markers}
+]
+}`);
+        layer.markers.forEach((m) => {
+          m.tags = ["User-Contributed"];
+          if (ctrs[m.id] == undefined) {
+            ctrs[m.id] = 1;
+          } else {
+            m.id = `${m.id}_${ctrs[m.id]++}`;
+          }
+        });
+
+        mapLayer.addCategory(categoryName, [
+          Layer.fromJSON(
+            layer,
+            categoryName,
+            undefined,
+            infoSource,
+            "totk",
+            map.wiki
+          ),
+        ]);
+      })
+      .catch((ex) => console.log(ex));
   }
 
   function addObjects(layer: MapLayer, path: string) {
@@ -706,12 +683,16 @@ window.onload = async () => {
     addJson(surface, "surface/locations.json"),
     addJson(sky, "sky/locations.json"),
     addJson(depths, "depths/locations.json"),
-    addWikiJson(surface, "Surface Categories"),
-    addWikiJson(sky, "Sky Categories"),
-    addWikiJson(depths, "Depths Categories"),
-    addWiki(surface, "Wiki", "Surface Markers", "temp", "flag", 25, 28, 2),
-    addWiki(sky, "Wiki", "Sky Markers", "temp", "flag", 25, 28, 2),
-    addWiki(depths, "Wiki", "Depths Markers", "temp", "flag", 25, 28, 2),
+    // MODIFIED FOR OFFLINE-ONLY
+    // load prepared local json data
+    // wiki data date: 2023-08-08
+    // if wiki data updated please open online wiki map page and replace it yourself
+    addWikiJson(surface, "surface/categories.json"),
+    addWikiJson(sky, "sky/categories.json"),
+    addWikiJson(depths, "depths/categories.json"),
+    addWiki(surface, "Wiki", "surface/markers.json", "temp", "flag", 25, 28, 2),
+    addWiki(sky, "Wiki", "sky/markers.json", "temp", "flag", 25, 28, 2),
+    addWiki(depths, "Wiki", "depths/markers.json", "temp", "flag", 25, 28, 2),
   ]);
 
   await map.initializeWikiConnector().catch((ex) => console.log(ex));

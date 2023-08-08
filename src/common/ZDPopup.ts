@@ -110,37 +110,40 @@ export class ZDPopup extends Popup {
       this.fire("uncomplete");
     });
 
-    const linkParts =
-      options.link && options.link !== "" ? options.link.split("#") : [];
-    const editLink =
-      options.infoSource === "summary" || options.infoSource === "section"
-        ? options.wiki.getEditLink(linkParts[0]) // just strip the anchor
-        : options.infoSource === "mapns"
-        ? options.wiki.getMapEditLink(options.id) // Map:Game Title/markerid
-        : options.infoSource === "mappage" && linkParts[1]
-        ? options.wiki.getEditLink(`Map:${linkParts[0]}/${linkParts[1]}`) // deprecated
-        : options.infoSource === "mappage"
-        ? options.wiki.getEditLink(`Map:${linkParts[0]}`) // deprecated
-        : linkParts[0]; // just strip the anchor
+    // MODIFIED FOR OFFLINE-ONLY
+    // remove edit and link
+    // in offline mode these buttons are useless
+    // const linkParts =
+    //   options.link && options.link !== "" ? options.link.split("#") : [];
+    // const editLink =
+    //   options.infoSource === "summary" || options.infoSource === "section"
+    //     ? options.wiki.getEditLink(linkParts[0]) // just strip the anchor
+    //     : options.infoSource === "mapns"
+    //     ? options.wiki.getMapEditLink(options.id) // Map:Game Title/markerid
+    //     : options.infoSource === "mappage" && linkParts[1]
+    //     ? options.wiki.getEditLink(`Map:${linkParts[0]}/${linkParts[1]}`) // deprecated
+    //     : options.infoSource === "mappage"
+    //     ? options.wiki.getEditLink(`Map:${linkParts[0]}`) // deprecated
+    //     : linkParts[0]; // just strip the anchor
 
-    if (editLink) {
-      const editButton = DomUtil.create(
-        "a",
-        "zd-popup__control zd-popup__control--edit",
-        this.controls
-      );
-      editButton.setAttribute("target", "_blank");
-      editButton.setAttribute("href", editLink);
-      DomUtil.create("i", "fas fa-edit", editButton).title = "Edit";
-    }
+    // if (editLink) {
+    //   const editButton = DomUtil.create(
+    //     "a",
+    //     "zd-popup__control zd-popup__control--edit",
+    //     this.controls
+    //   );
+    //   editButton.setAttribute("target", "_blank");
+    //   editButton.setAttribute("href", editLink);
+    //   DomUtil.create("i", "fas fa-edit", editButton).title = "Edit";
+    // }
 
-    const linkButton = DomUtil.create(
-      "a",
-      "zd-popup__control zd-popup__control--permalink",
-      this.controls
-    );
-    linkButton.setAttribute("href", `?m=${options.id}`);
-    DomUtil.create("i", "fas fa-link", linkButton).title = "Permalink";
+    // const linkButton = DomUtil.create(
+    //   "a",
+    //   "zd-popup__control zd-popup__control--permalink",
+    //   this.controls
+    // );
+    // linkButton.setAttribute("href", `?m=${options.id}`);
+    // DomUtil.create("i", "fas fa-link", linkButton).title = "Permalink";
 
     this.setContent(this.container);
   }

@@ -74,8 +74,19 @@ export class ZDMarker extends Marker {
       marker.bindPopup(marker.popup);
       marker.on("popupopen", () => {
         marker.updateUrl();
-        marker.popup?.loadDynamicContent();
+        // MODIFIED FOR OFFLINE-ONLY
+        // prevent loading online contents
+        // marker.popup?.loadDynamicContent();
       });
+
+      // MODIFIED FOR SELF-USE start
+      // i like right click marker to complete it
+      // not fully tested, if some bug happens plese remove these codes
+      marker.on("contextmenu", () => {
+        marker.complete();
+        wiki.complete(marker.id);
+      });
+      // MODIFIED FOR SELF-USE end
     } else {
       marker
         .bindTooltip(marker.name, {

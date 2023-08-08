@@ -1,0 +1,23 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 283225,
+        "ns": 130,
+        "title": "Zelda Dungeon:Tears of the Kingdom Map/Depths Categories",
+        "revisions": [
+          {
+            "slots": {
+              "main": {
+                "contentmodel": "wikitext",
+                "contentformat": "text/x-wiki",
+                "content": "[\n  {\n    \"name\": \"Main Quest\",\n    \"source\": \"mapns\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"mainquest.png\",\n          \"width\": 42,\n          \"height\": 25\n        },\n        \"markers\": [\n          {\"coords\":[-3363,1348],\"elv\":\"-736\",\"id\":\"MQ-TrailoftheMasterSword\",\"name\":\"Trail of the Master Sword\",\"link\":\"Trail of the Master Sword\"}\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"Shrine Quest\",\n    \"source\": \"mapns\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"shrinequest.png\",\n          \"width\": 25,\n          \"height\": 29\n        },\n        \"markers\": [\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"Side Quest\",\n    \"source\": \"mapns\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"sidequest.png\",\n          \"width\": 27,\n          \"height\": 21\n        },\n        \"markers\": [\n          {\"coords\":[-3363,1335],\"elv\":\"-737\",\"id\":\"SQ-AncientBladesBelow\",\"name\":\"Ancient Blades Below\",\"link\":\"Ancient Blades Below\"}\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"Side Adventure\",\n    \"source\": \"mapns\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"adventure.png\",\n          \"width\": 20,\n          \"height\": 24\n        },\n        \"markers\": [\n          {\"coords\":[-1928,-803],\"elv\":\"-520\",\"id\":\"SA-MasterKohgaoftheYigaClan\",\"name\":\"Master Kohga of the Yiga Clan\",\"link\":\"Master Kohga of the Yiga Clan\"}\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"Memory\",\n    \"source\": \"summary\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"memory.png\",\n          \"width\": 25,\n          \"height\": 23\n        },\n        \"markers\": [\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"Quest Objective\",\n    \"source\": \"mapns\",\n    \"layers\": [\n      {\n        \"minZoom\": 4,\n        \"icon\": {\n          \"url\": \"objective.png\",\n          \"width\": 13,\n          \"height\": 13\n        },\n        \"markers\": [\n          {\"coords\":[-451,-803],\"elv\":\"-470\",\"id\":\"MQ006-01\",\"name\":\"Camera Work in the Depths\",\"link\":\"Camera Work in the Depths\"}\n        ]\n      }\n    ]\n  }\n]"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

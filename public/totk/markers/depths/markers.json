@@ -1,0 +1,32 @@
+{
+  "parse": {
+    "title": "Zelda Dungeon:Tears of the Kingdom Map/Depths Markers",
+    "pageid": 277635,
+    "revid": 624389,
+    "text": {
+      "*": "<div class=\"mw-parser-output\"><p>{\"coords\":[1583,3986],\"elv\":\"-576\",\"id\":\"Schema Stone (Instant Cannon)\",\"name\":\"Schema Stone (Instant Cannon)\",\"link\":\"Schema Stone (Instant Cannon)\"},\n{\"coords\":[591,3257],\"elv\":\"-750\",\"id\":\"Schema Stone (Bolt Boat)\",\"name\":\"Schema Stone (Bolt Boat)\",\"link\":\"Schema Stone (Bolt Boat)\"},\n{\"coords\":[-3344,2947],\"elv\":\"-453\",\"id\":\"Schema Stone\",\"name\":\"Schema Stone\",\"link\":\"Schema Stone\"},\n{\"coords\":[2395,1641],\"elv\":\"-824\",\"id\":\"Schema Stone (Automated Ally)\",\"name\":\"Schema Stone (Automated Ally)\",\"link\":\"Schema Stone (Automated Ally)\"},\n{\"coords\":[1881,-3480],\"elv\":\"-417\",\"id\":\"Schema Stone (Rocket Platform)\",\"name\":\"Schema Stone (Rocket Platform)\",\"link\":\"Schema Stone (Rocket Platform)\"},\n{\"coords\":[-2943,-3848],\"elv\":\"-487\",\"id\":\"Schema Stone (Hovercraft)\",\"name\":\"Schema Stone (Hovercraft)\",\"link\":\"Schema Stone (Hovercraft)\"},\n{\"coords\":[-2210,3561],\"elv\":\"-588\",\"id\":\"Schema Stone (Bridge)\",\"name\":\"Schema Stone (Bridge)\",\"link\":\"Schema Stone (Bridge)\"},\n{\"coords\":[-1226,1796],\"elv\":\"-629\",\"id\":\"Schema Stone (Launch Pad)\",\"name\":\"Schema Stone (Launch Pad)\",\"link\":\"Schema Stone (Launch Pad)\"},\n{\"coords\":[-1996,-855],\"elv\":\"\",\"id\":\"Schema Stone (Fanplane)\",\"name\":\"Schema Stone (Fanplane)\",\"link\":\"Schema Stone (Fanplane)\"},\n{\"coords\":[-2473,-3210],\"elv\":\"-475\",\"id\":\"Schema Stone (Instant Scaffold)\",\"name\":\"Schema Stone (Instant Scaffold)\",\"link\":\"Schema Stone (Instant Scaffold)\"},\n</p>\n<!-- \nNewPP limit report\nCached time: 20230808002134\nCache expiry: 86400\nReduced expiry: false\nComplications: []\nCPU time usage: 0.007 seconds\nReal time usage: 0.007 seconds\nPreprocessor visited node count: 181/1000000\nPost\u2010expand include size: 1391/4194304 bytes\nTemplate argument size: 871/4194304 bytes\nHighest expansion depth: 3/100\nExpensive parser function count: 0/100\nUnstrip recursion depth: 0/20\nUnstrip post\u2010expand size: 0/5000000 bytes\nExtLoops count: 0/1000\n-->\n<!--\nTransclusion expansion time report (%,ms,calls,template)\n100.00%    3.458      1 -total\n 79.70%    2.756     10 Template:Pin\n-->\n\n<!-- Saved in parser cache with key zeldadun_wikidata-zdl_wiki_:pcache:idhash:277635-0!canonical and timestamp 20230808002134 and revision id 624389.\n -->\n</div>"
+    },
+    "langlinks": [],
+    "categories": [],
+    "links": [],
+    "templates": [
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:Pin"
+      }
+    ],
+    "images": [],
+    "externallinks": [],
+    "sections": [],
+    "parsewarnings": [],
+    "displaytitle": "<span class=\"mw-page-title-namespace\">Zelda Dungeon</span><span class=\"mw-page-title-separator\">:</span><span class=\"mw-page-title-main\">Tears of the Kingdom Map/Depths Markers</span>",
+    "iwlinks": [],
+    "properties": [
+      {
+        "name": "description",
+        "*": "{\"coords\":[1583,3986],\"elv\":\"-576\",\"id\":\"Schema Stone (Instant Cannon)\",\"name\":\"Schema Stone (Instant Cannon)\",\"link\":\"Schema Stone (Instant Cannon)\"},\n{\"coords\":[591,3257],\"elv\":\"-750\",\"id\":\"Schema Stone (Bolt Boat)\",\"name\":\"Schema Stone (Bolt Boat)\",\"link\":\"Schema Stone (Bolt Boat)\"},\n{\"coords\":[-3344,2947],\"elv\":\"-453\",\"id\":\"Schema Stone\",\"name\":\"Schema Stone\",\"link\":\"Schema Stone\"},\n{\"coords\":[2395,1641],\"elv\":\"-824\",\"id\":\"Schema Stone (Automated Ally)\",\"name\":\"Schema Stone (Automated Ally)\",\"link\":\"Schema Stone (Automated Ally)\"},\n{\"coords\":[1881,-3480],\"elv\":\"-417\",\"id\":\"Schema Stone (Rocket Platform)\",\"name\":\"Schema Stone (Rocket Platform)\",\"link\":\"Schema Stone (Rocket Platform)\"},\n{\"coords\":[-2943,-3848],\"elv\":\"-487\",\"id\":\"Schema Stone (Hovercraft)\",\"name\":\"Schema Stone (Hovercraft)\",\"link\":\"Schema Stone (Hovercraft)\"},\n{\"coords\":[-2210,3561],\"elv\":\"-588\",\"id\":\"Schema Stone (Bridge)\",\"name\":\"Schema Stone (Bridge)\",\"link\":\"Schema Stone (Bridge)\"},\n{\"coords\":[-1226,1796],\"elv\":\"-629\",\"id\":\"Schema Stone (Launch Pad)\",\"name\":\"Schema Stone (Launch Pad)\",\"link\":\"Schema Stone (Launch Pad)\"},\n{\"coords\":[-1996,-855],\"elv\":\"\",\"id\":\"Schema Stone (Fanplane)\",\"name\":\"Schema Stone (Fanplane)\",\"link\":\"Schema Stone (Fanplane)\"},\n{\"coords\":[-2473,-3210],\"elv\":\"-475\",\"id\":\"Schema Stone (Instant Scaffold)\",\"name\":\"Schema Stone (Instant Scaffold)\",\"link\":\"Schema Stone (Instant Scaffold)\"},"
+      }
+    ]
+  }
+}

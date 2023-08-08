@@ -1,0 +1,32 @@
+{
+  "parse": {
+    "title": "Zelda Dungeon:Tears of the Kingdom Map/Sky Markers",
+    "pageid": 277715,
+    "revid": 626619,
+    "text": {
+      "*": "<div class=\"mw-parser-output\"><p>{\"coords\":[-766,453],\"elv\":\"1467\",\"id\":\"Shrine Explorer\",\"name\":\"Shrine Explorer\",\"link\":\"Shrine Explorer\"},\n{\"coords\":[-2853,2856],\"elv\":\"1212\",\"id\":\"The Necluda Sky Crystal\",\"name\":\"The Necluda Sky Crystal\",\"link\":\"The Necluda Sky Crystal\"},\n</p>\n<!-- \nNewPP limit report\nCached time: 20230808002134\nCache expiry: 86400\nReduced expiry: false\nComplications: []\nCPU time usage: 0.004 seconds\nReal time usage: 0.004 seconds\nPreprocessor visited node count: 37/1000000\nPost\u2010expand include size: 242/4194304 bytes\nTemplate argument size: 138/4194304 bytes\nHighest expansion depth: 3/100\nExpensive parser function count: 0/100\nUnstrip recursion depth: 0/20\nUnstrip post\u2010expand size: 0/5000000 bytes\nExtLoops count: 0/1000\n-->\n<!--\nTransclusion expansion time report (%,ms,calls,template)\n100.00%    1.428      1 -total\n 93.35%    1.333      2 Template:Pin\n-->\n\n<!-- Saved in parser cache with key zeldadun_wikidata-zdl_wiki_:pcache:idhash:277715-0!canonical and timestamp 20230808002134 and revision id 626619.\n -->\n</div>"
+    },
+    "langlinks": [],
+    "categories": [],
+    "links": [],
+    "templates": [
+      {
+        "ns": 10,
+        "exists": "",
+        "*": "Template:Pin"
+      }
+    ],
+    "images": [],
+    "externallinks": [],
+    "sections": [],
+    "parsewarnings": [],
+    "displaytitle": "<span class=\"mw-page-title-namespace\">Zelda Dungeon</span><span class=\"mw-page-title-separator\">:</span><span class=\"mw-page-title-main\">Tears of the Kingdom Map/Sky Markers</span>",
+    "iwlinks": [],
+    "properties": [
+      {
+        "name": "description",
+        "*": "{\"coords\":[-766,453],\"elv\":\"1467\",\"id\":\"Shrine Explorer\",\"name\":\"Shrine Explorer\",\"link\":\"Shrine Explorer\"},\n{\"coords\":[-2853,2856],\"elv\":\"1212\",\"id\":\"The Necluda Sky Crystal\",\"name\":\"The Necluda Sky Crystal\",\"link\":\"The Necluda Sky Crystal\"},"
+      }
+    ]
+  }
+}

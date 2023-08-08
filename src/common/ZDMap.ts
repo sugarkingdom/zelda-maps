@@ -121,11 +121,19 @@ export class ZDMap extends Map {
       map.updateUrl();
     });
 
-    map.on("click", (e) => {
-      console.log(e.latlng);
-      map.panTo(e.latlng);
-    });
+    // MODIFIED FOR SELF-USE
+    // i don't like click to pan so removed
+    // maybe later version will add setting to control
+    // map.on("click", (e) => {
+    //   console.log(e.latlng);
+    //   map.panTo(e.latlng);
+    // });
 
+    // MODIFIED FOR SELF-USE
+    // hide map right click menu
+    map.on("contextmenu", () => {
+      return false;
+    });
     return map;
   }
 
@@ -245,10 +253,12 @@ export class ZDMap extends Map {
   }
 
   public async initializeWikiConnector(): Promise<void> {
-    await this.wiki.getLoggedInUser();
-    if (this.settingsControl && this.wiki.user) {
-      this.settingsControl.login(this.wiki.user.name);
-    }
+    // MODIFIED FOR OFFLINE-ONLY
+    // stop request user info from online wiki
+    // await this.wiki.getLoggedInUser();
+    // if (this.settingsControl && this.wiki.user) {
+    //   this.settingsControl.login(this.wiki.user.name);
+    // }
 
     // load marker completion from wiki into marker layers
     const completedMarkers = await this.wiki.getCompletedMarkers();

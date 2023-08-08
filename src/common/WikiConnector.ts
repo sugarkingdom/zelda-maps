@@ -245,21 +245,24 @@ export class WikiConnector {
       );
     }
 
-    if (!this.offline) {
-      const actionLogin = "Login";
-      const actionContinue = "Continue without logging in";
-      const action = await this.showDialog(
-        `Logging into your Zelda Dungeon Wiki account allows you to access your completion data from any device. \
-                If you choose not to login now, you can login anytime from the settings menu on the left.`,
-        [actionLogin, actionContinue]
-      );
-      if (action === actionLogin) {
-        this.login();
+    // MODIFIED FOR OFFLINE-ONLY
+    // remove offline notice dialog
 
-        return;
-      }
-      this.offline = true;
-    }
+    // if (!this.offline) {
+    //   const actionLogin = "Login";
+    //   const actionContinue = "Continue without logging in";
+    //   const action = await this.showDialog(
+    //     `Logging into your Zelda Dungeon Wiki account allows you to access your completion data from any device. \
+    //             If you choose not to login now, you can login anytime from the settings menu on the left.`,
+    //     [actionLogin, actionContinue]
+    //   );
+    //   if (action === actionLogin) {
+    //     this.login();
+
+    //     return;
+    //   }
+    //   this.offline = true;
+    // }
 
     this.completionStore.setItem(marker, true);
   }

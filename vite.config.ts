@@ -1,5 +1,5 @@
 import { createMpaPlugin, createPages } from "vite-plugin-virtual-mpa";
-import { defineConfig, normalizePath } from "vite";
+import { defineConfig } from "vite";
 import path from "path";
 
 const pages = createPages([
@@ -46,8 +46,8 @@ const pages = createPages([
 ]);
 
 // tslint:disable-next-line:no-default-export vite convention
-export default defineConfig(({ command, mode, ssrBuild }) => ({
-  base: mode === "production" ? "/maps/" : "/maps-beta/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/zelda-maps/" : "/zelda-maps-beta/",
   plugins: [
     createMpaPlugin({
       template: "src/template.html",

@@ -1,3 +1,12 @@
+## Offline only modified for self-use
+
+1. store online wiki data for offline.
+2. add right click map marker to complete it.
+3. prevent map right click to support No.2.
+4. (TODO) add export/import completed markers.
+
+please global search `MODIFIED` for every change.
+
 # Zelda Dungeon Interactive Maps
 
 Interactive maps for Zelda games, hosted on https://www.zeldadungeon.net

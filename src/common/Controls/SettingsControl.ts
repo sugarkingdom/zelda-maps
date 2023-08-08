@@ -75,7 +75,7 @@ function createToggleableSettingsRow({
  * Settings control
  */
 export class SettingsControl extends ControlPane {
-  private userCell: HTMLElement;
+  // private userCell: HTMLElement;
 
   public constructor(
     private wiki: WikiConnector,
@@ -98,19 +98,20 @@ export class SettingsControl extends ControlPane {
       "zd-settings",
       this.container
     );
-    const userRow = DomUtil.create(
-      "tr",
-      "zd-settings__setting",
-      settingsContent
-    );
-    this.userCell = DomUtil.create("td", "", userRow);
-    this.userCell.setAttribute("colspan", "3");
-    const loginButton = DomUtil.create("div", "selectable", this.userCell);
-    loginButton.innerText = "Login";
-    DomEvent.addListener(loginButton, "click", () => {
-      wiki.login();
-    });
-
+    // MODIFIED FOR OFFLINE-ONLY
+    // remove login btn
+    // const userRow = DomUtil.create(
+    //   "tr",
+    //   "zd-settings__setting",
+    //   settingsContent
+    // );
+    // this.userCell = DomUtil.create("td", "", userRow);
+    // this.userCell.setAttribute("colspan", "3");
+    // const loginButton = DomUtil.create("div", "selectable", this.userCell);
+    // loginButton.innerText = "Login";
+    // DomEvent.addListener(loginButton, "click", () => {
+    //   wiki.login();
+    // });
     tags.forEach((tag) => {
       const handleToggleOn = () =>
         layers.forEach((l) => l.showTaggedMarkers(tag));
@@ -180,17 +181,38 @@ export class SettingsControl extends ControlPane {
         layers.forEach((l) => l.clearTaggedMarkers("Completed"));
       }
     });
+
+    // const exportCompletionDataRow = DomUtil.create(
+    //   "tr",
+    //   "zd-settings__setting",
+    //   settingsContent
+    // );
+    // const exportCompletionData = DomUtil.create(
+    //   "td",
+    //   "selectable",
+    //   exportCompletionDataRow
+    // );
+    // exportCompletionData.setAttribute("colspan", "3");
+    // exportCompletionData.innerText = "Export completion data";
+    // DomEvent.addListener(exportCompletionData, "click", () => {
+    //   wiki.getCompletedMarkers().then((completedMarkers) => {
+    //     console.log(completedMarkers.join());
+    //   });
+    // });
   }
 
-  public login(username: string) {
-    DomUtil.empty(this.userCell);
-    const logoutButton = DomUtil.create("div", "selectable", this.userCell);
-    logoutButton.style.cssFloat = "right";
-    logoutButton.innerText = "Logout";
-    DomEvent.addListener(logoutButton, "click", () => {
-      this.wiki.logout();
-    });
-    const usernameLabel = DomUtil.create("div", "", this.userCell);
-    usernameLabel.innerText = username;
-  }
+  // MODIFIED FOR OFFLINE-ONLY
+  // remove login method to prevent ts error
+
+  // public login(username: string) {
+  //   DomUtil.empty(this.userCell);
+  //   const logoutButton = DomUtil.create("div", "selectable", this.userCell);
+  //   logoutButton.style.cssFloat = "right";
+  //   logoutButton.innerText = "Logout";
+  //   DomEvent.addListener(logoutButton, "click", () => {
+  //     this.wiki.logout();
+  //   });
+  //   const usernameLabel = DomUtil.create("div", "", this.userCell);
+  //   usernameLabel.innerText = username;
+  // }
 }
